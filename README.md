@@ -2,5 +2,10 @@ List of stuff im gonna add
 
 Abbreviations
 Prestige
-Leaderboards
+Leaderboards + rewards
 Customizable Fruit Emojis
+Potions
+Acheivments
+Trading???
+Daily rewards or daily shop
+Different currencys

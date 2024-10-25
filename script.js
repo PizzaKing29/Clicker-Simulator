@@ -1,3 +1,5 @@
+import { formatter } from '.format.js'
+
 const Fruit = document.getElementById('Fruit')
 const FruitAmountElement = document.getElementById('FruitAmountElement')
 const PurchaseDoubleClicks = document.getElementById('PurchaseDoubleClicks')
@@ -13,7 +15,7 @@ function DisplayFruit () {
 
 // clicking fruit system
 Fruit.addEventListener('click', ()=> {
-    FruitAmount += 1*(ClickMultiplier)
+    FruitAmount += 500*(ClickMultiplier)
     DisplayFruit()
 })
 
