@@ -1,6 +1,6 @@
 export function formatter (number) {
 
-    if (number < 1000) return Math.round(num)
+    if (number < 1000) return Math.round(number)
 
     const match = [
         {value: 1e3, Symbol: "K"},
@@ -38,6 +38,6 @@ export function formatter (number) {
 
     let item = match.findLast(function(object){return number >= object.value})
 
-    return (number / item.value).toFixed(2) + item.symbol
+    return (number / item.value).toFixed(2) + item.Symbol
 
 }
