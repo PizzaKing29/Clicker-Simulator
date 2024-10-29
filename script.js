@@ -1,9 +1,11 @@
 import { formatter } from './format.js'
-import { ClickMultiplier } from './shop.js'
 
 const Fruit = document.getElementById('Fruit')
 const FruitAmountElement = document.getElementById('FruitAmountElement')
 export let FruitAmount = 0
+let PriceIncrease = 1 // starting amount
+export let ClickMultiplier = 1 // starting amount
+PriceIncrease
 
 // update fruit amount
 function DisplayFruit () {
