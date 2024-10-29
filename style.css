@@ -1,8 +1,42 @@
+/* 
+Text: #0c0d0f
+Background: #f8f8f9  
+Primary: #7c8798
+Secondary: #b3aabc
+Accent: #ac99af
+
+*/
+
+
+
+
 *{
     user-select: none;
+    color: #0c0d0f;
+    background-color: #f8f8f9;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   }
+
+button {
+    background-color: #7c8798;
+    border: 0.2rem solid #0c0d0f;
+    border-radius: 0.25rem;
+    font-weight: bold;
+    padding: 0.25rem 1rem;
+}
+button:hover {
+    background-color: hsl(216, 12%, 67.5%);
+}
+
+button:disabled {
+    background-color: hsl(216, 12%, 29%);
+}
+
   
   #Fruit {
       font-size: 5rem;
+      display: inline;
+      margin: 0;
+      padding: 0;
   }
   

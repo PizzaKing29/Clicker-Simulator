@@ -1,14 +1,13 @@
-
-
 function PurchaseFruitPerSecond(FruitValue) {
     console.log(FruitValue)
 }
 
 
-function PurchaseUpgrades() {
+function PurchaseUpgrades(FruitValue) {
     
 }
 
-function PurchasePotions() {
+
+function PurchasePotions(FruitValue) {
 
 }
