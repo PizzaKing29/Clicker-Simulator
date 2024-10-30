@@ -9,25 +9,57 @@
 <body>
     <div>
         <h2 id="FruitAmountElement">Fruit Amount:</h2>
-        <p id="Fruit">🍏</p>
+        <div id="FruitContainer">
+            <p id="Fruit">🍏</p>
+        </div>
+
         <h3 id="FruitPerSecondElement">0 Fruit Per Second</h3>
-            <div>
+            <div id="ShopContainer">
                 <h2>Shop</h2>
-                <p>+1 Fruit Per Second: # Fruit</p>    <button disabled value="1" onclick="PurchaseFruitPerSecond(1)">Purchase</button>
-                <p>+3 Fruit Per Second: # Fruit</p>   <button value="3" onclick="PurchaseFruitPerSecond(3)">Purchase</button>
-                <p>+5 Fruit Per Second: # Fruit</p>   <button value="5" onclick="PurchaseFruitPerSecond(5)">Purchase</button>
-                <p>+10 Fruit Per Second: # Fruit</p>   <button value="10" onclick="PurchaseFruitPerSecond(10)">Purchase</button>
-                <p>Mega Fruit: # Fruit (1/20 for x5 Fruit)</p>      <button onclick="PurchaseFruitPerSecond()">Purchase</button>
+                <div class="ShopPartsContainer">
+                    <p>+1 Fruit Per Second: # Fruit</p>
+                    <button disabled value="1" onclick="PurchaseFruitPerSecond(1)">Purchase</button>
+                </div>
+                <div class="ShopPartsContainer">
+                    <p>+3 Fruit Per Second: # Fruit</p>
+                    <button value="3" onclick="PurchaseFruitPerSecond(3)">Purchase</button>
+                </div>
+                <div class="ShopPartsContainer">
+                    <p>+5 Fruit Per Second: # Fruit</p>
+                    <button value="5" onclick="PurchaseFruitPerSecond(5)">Purchase</button>
+                </div>
+                <div class="ShopPartsContainer">
+                    <p>+10 Fruit Per Second: # Fruit</p>
+                    <button value="10" onclick="PurchaseFruitPerSecond(10)">Purchase</button>
+                </div>
+                <div class="ShopPartsContainer">
+                    <p>Mega Fruit: # Fruit (1/20 for x5 Fruit)</p>
+                    <button onclick="PurchaseFruitPerSecond()">Purchase</button>
+                </div>
 
                 <h2>Shop Upgrades</h2>
-                <p>+2 Fruit Earned: # Fruit</p>   <button value="2" onclick="PurchaseUpgrades(2)">Purchase</button>
-                <p>+5 Fruit Earned: # Fruit</p>   <button value="5" onclick="PurchaseUpgrades(5)">Purchase</button>
-                <p>+10 Fruit Earned: # Fruit</p>   <button value="10" onclick="PurchaseUpgrades(10)">Purchase</button>
+                <div class="ShopPartsContainer">
+                    <p>+2 Fruit Earned: # Fruit</p>
+                    <button value="2" onclick="PurchaseUpgrades(2)">Purchase</button>
+                </div>
+                <div class="ShopPartsContainer">
+                    <p>+5 Fruit Earned: # Fruit</p>
+                    <button value="5" onclick="PurchaseUpgrades(5)">Purchase</button>
+                </div>
+                <div class="ShopPartsContainer">
+                    <p>+10 Fruit Earned: # Fruit</p>
+                    <button value="10" onclick="PurchaseUpgrades(10)">Purchase</button>
+                </div>
 
                 <h2>Buy Potions</h2>
-                <p>x1.5 Fruit: 5 Minutes</p>    <button value="1.5" onclick="PurchasePotions(1.5)">Purchase</button>
-                <p>x5 Fruit: 20 Minutes</p>     <button value="5" onclick="PurchasePotions(5)">Purchase</button>
-
+                <div class="ShopPartsContainer">
+                <p>x1.5 Fruit: 5 Minutes</p>
+                <button value="1.5" onclick="PurchasePotions(1.5)">Purchase</button>
+                </div>
+                <div class="ShopPartsContainer">
+                    <p>x5 Fruit: 20 Minutes</p>
+                <button value="5" onclick="PurchasePotions(5)">Purchase</button>
+                </div>
             </div>
             <div>
                 <h2>Prestige</h2>
@@ -36,8 +68,5 @@
     </div>
 
     <script src="script.js" type="module"></script>
-    <script src="format.js" type="module"></script>
-    <script src="shop.js"></script>
-    <script src="index.js"></script>
 </body>
 </html>

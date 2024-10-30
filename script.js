@@ -1,4 +1,5 @@
 import { formatter } from './format.js'
+import { UpdateButtonStatus } from './shop.js'
 
 const Fruit = document.getElementById('Fruit')
 const FruitAmountElement = document.getElementById('FruitAmountElement')
@@ -8,7 +9,6 @@ let PriceIncrease = 1 // starting amount
 let ClickMultiplier = 1 // starting amount
 let FruitPerSecond = 1
 
-PriceIncrease
 
 
 // update fruit amount
@@ -17,6 +17,9 @@ function DisplayFruit () {
     FruitPerSecondElement.innerHTML = `<h3>${FruitPerSecond} Fruit Per Second</h3>`
 }
 
+export function getFruitAmount () {
+    return FruitAmount
+}
 
 
 // clicking fruit system
@@ -29,6 +32,7 @@ Fruit.addEventListener('click', ()=> {
 function IncrementFruit() {
     FruitAmount += FruitPerSecond
     DisplayFruit()
+    UpdateButtonStatus()
 }
 
 setInterval(IncrementFruit, 1000)

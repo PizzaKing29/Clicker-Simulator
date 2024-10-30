@@ -1,9 +1,9 @@
 /* 
-Text: #0c0d0f
-Background: #f8f8f9  
-Primary: #7c8798
-Secondary: #b3aabc
-Accent: #ac99af
+Text: #FFFFFF
+Background: #19171A
+Primary: #F25D50 
+Secondary: #A0D2DB 
+Accent: #F2A74B 
 
 */
 
@@ -12,31 +12,80 @@ Accent: #ac99af
 
 *{
     user-select: none;
-    color: #0c0d0f;
-    background-color: #f8f8f9;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    color: #FFFFFF;
   }
 
+body {
+    background-color: #19171A;
+}
+
 button {
-    background-color: #7c8798;
-    border: 0.2rem solid #0c0d0f;
+    background-color: #7796d1;
+    border: none;
     border-radius: 0.25rem;
     font-weight: bold;
     padding: 0.25rem 1rem;
+    margin: auto;
 }
 button:hover {
-    background-color: hsl(216, 12%, 67.5%);
+    background-color: hsl(219, 49%, 74%);
 }
 
 button:disabled {
-    background-color: hsl(216, 12%, 29%);
+    background-color: #45433E;
 }
 
-  
-  #Fruit {
-      font-size: 5rem;
-      display: inline;
-      margin: 0;
-      padding: 0;
+
+#FruitContainer {
+    display: flex;
+    font-size: 7rem;
+    height: 8rem;
+    width: 8rem;
+    margin: auto;
+    margin-bottom: 1rem;
+    padding: 2.5rem;
+    background-color: #292929;
+    justify-content: center;
+    align-items: center;
+    border-radius: 1rem;
   }
-  
+
+
+#Fruit {
+    transition: transform 0.15s ease;
+    justify-content: center;
+    align-items: center;
+}
+
+#Fruit:hover {
+    transform: scale(1.2);
+}
+
+.ShopPartsContainer {
+    background-color: #292929;
+    max-width: 20%;
+    border-radius: 1rem;
+    display: flex;
+}
+
+#FruitAmountElement {
+    display: flex;
+    background-color: #292929;
+    justify-content: center;
+    align-items: center;
+    max-width: 35%;
+    height: 7rem;
+    margin: auto;
+    margin-bottom: 7rem;
+    border-radius: 1rem;
+}
+
+#FruitPerSecondElement {
+    display: flex;
+    max-width: fit-content;
+    margin: auto;
+    background-color: #292929;
+    padding: 0.5rem 1rem;
+    border-radius: 1rem;
+}
