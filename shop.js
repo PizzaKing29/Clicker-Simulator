@@ -1,11 +1,12 @@
-import { GetFruitAmount } from "./script"
 const ClickSound = new Audio('Audio/click.mp3')
+window.PurchaseFruitPerSecond = PurchaseFruitPerSecond
+window.PurchaseUpgrades = PurchaseUpgrades
+window.PurchasePotions = PurchasePotions
 
 export function PurchaseFruitPerSecond(FruitValue) {
-    console.log(FruitValue)
     ClickSound.play()
+    console.log()
 }
-
 
 export function PurchaseUpgrades(FruitValue) {
     

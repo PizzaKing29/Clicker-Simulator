@@ -4,27 +4,26 @@ import { UpdateButtonStatus } from './shop.js'
 const Fruit = document.getElementById('Fruit')
 const FruitAmountElement = document.getElementById('FruitAmountElement')
 const FruitPerSecondElement = document.getElementById('FruitPerSecondElement')
-let FruitAmount = 0
+export let FruitAmount = 0
 let PriceIncrease = 1 // starting amount
 let ClickMultiplier = 1 // starting amount
 let FruitPerSecond = 1
 
 
-
 // update fruit amount
 function DisplayFruit () {
-    FruitAmountElement.innerHTML = `<h2>Fruit Amount: ${formatter(FruitAmount)}</h2>`
-    FruitPerSecondElement.innerHTML = `<h3>${FruitPerSecond} Fruit Per Second</h3>`
+    FruitAmountElement.textContent = `Fruit Amount: ${formatter(FruitAmount)}`
+    FruitPerSecondElement.textContent = `${FruitPerSecond} Fruit Per Second`
 }
 
-export function getFruitAmount () {
+function GetFruitAmount () {
     return FruitAmount
 }
-
+window.GetFruitAmount = GetFruitAmount
 
 // clicking fruit system
 Fruit.addEventListener('click', ()=> {
-    FruitAmount += 500*(ClickMultiplier)
+    FruitAmount += 500 * ClickMultiplier
     DisplayFruit()
 })
 
