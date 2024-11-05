@@ -10,11 +10,12 @@
     <div>
         <h2 id="FruitAmountElement">Fruit Amount: 0</h2>
         <div id="FruitContainer">
-            <p id="Fruit">🍏</p>
+            <p id="Fruit">🍎</p>
         </div>
 
         <h3 id="FruitPerSecondElement">0 Fruit Per Second</h3>
             <div id="ShopContainer">
+
                 <h2>Shop</h2>
                 <div class="ShopPartsContainer">
                     <p id="OnePerSecond">+1 Fruit Per Second: # Fruit</p>
@@ -33,9 +34,14 @@
                     <button disabled value="10" onclick="PurchaseFruitPerSecond(10)">Purchase</button>
                 </div>
                 <div class="ShopPartsContainer">
+                    <p id="FifteenPerSecond">+15 Fruit Per Second: # Fruit</p>
+                    <button disabled value="15" onclick="PurchaseFruitPerSecond(15)">Purchase</button>
+                </div>
+                <div class="ShopPartsContainer">
                     <p >Mega Fruit: # Fruit (1/20 for x5 Fruit)</p>
                     <button disabled onclick="PurchaseFruitPerSecond()">Purchase</button>
                 </div>
+
 
                 <h2>Shop Upgrades</h2>
                 <div class="ShopPartsContainer">
@@ -50,6 +56,7 @@
                     <p>+10 Fruit Earned: # Fruit</p>
                     <button disabled value="10" onclick="PurchaseUpgrades(10)">Purchase</button>
                 </div>
+                
 
                 <h2>Buy Potions</h2>
                 <div class="ShopPartsContainer">
@@ -61,12 +68,14 @@
                 <button value="5" onclick="PurchasePotions(5)">Purchase</button>
                 </div>
             </div>
+
+            
             <div>
                 <h2>Prestige</h2>
                 <p>x2 Fruit Per Second: # Fruit</p> <button  >Purchase</button>
             </div>
     </div>
 
-    <script src="script.js" type="module"></script>
+    <script src="script.ts" type="module"></script>
 </body>
 </html>

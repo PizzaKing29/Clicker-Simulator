@@ -9,3 +9,7 @@ Acheivments
 Trading???
 Daily rewards or daily shop
 Different currencys
+
+
+
+save/load button

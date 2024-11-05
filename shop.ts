@@ -1,5 +1,4 @@
-
-
+import { GetFruitAmount, GetFruitPerSecond, SetFruitAmount } from "./script"
 
 const ClickSound = new Audio('Audio/click.mp3')
 window.PurchaseFruitPerSecond = PurchaseFruitPerSecond

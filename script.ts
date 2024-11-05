@@ -1,6 +1,8 @@
 import { formatter } from './format.js'
 import { UpdateButtonStatus } from './shop.js'
 
+type Fruit = number
+
 const Fruit = document.getElementById('Fruit')
 const FruitAmountElement = document.getElementById('FruitAmountElement')
 const FruitPerSecondElement = document.getElementById('FruitPerSecondElement')
@@ -36,6 +38,7 @@ window.SetFruitAmount = SetFruitAmount
 export function GetFruitAmount () {
     return FruitAmount
 }
+
 window.GetFruitAmount = GetFruitAmount
 
 export function GetFruitPerSecond () {

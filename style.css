@@ -17,11 +17,11 @@ Accent: #F2A74B
   }
 
 body {
-    background-color: #19171A;
+    background-color: #d3d3d3;
 }
 
 button {
-    background-color: #7796d1;
+    background-color: #59b559;
     border: none;
     border-radius: 0.25rem;
     font-weight: bold;
@@ -64,9 +64,12 @@ button:disabled {
 
 .ShopPartsContainer {
     background-color: #292929;
+    height: 8rem;
     max-width: 20%;
     border-radius: 1rem;
     display: flex;
+    margin-left: 75%;
+    margin-top: 0.5rem;
 }
 
 #FruitAmountElement {
