@@ -1,15 +1,15 @@
-import { formatter } from './typescript/format.js'
-import { UpdateButtonStatus } from './typescript/shop.js'
+import { formatter } from './javascript/format.js'
+import { UpdateButtonStatus } from './typescript/shop.ts'
 
-type Fruit = number
 
-const Fruit = document.getElementById('Fruit')
-const FruitAmountElement = document.getElementById('FruitAmountElement')
-const FruitPerSecondElement = document.getElementById('FruitPerSecondElement')
-const OnePerSecond = document.getElementById('OnePerSecond')
-const ThreePerSecond = document.getElementById('ThreePerSecond')
-const FivePerSecond = document.getElementById('FivePerSecond')
-const TenPerSecond = document.getElementById('TenPerSecond')
+
+const Fruit = document.getElementById('Fruit') as HTMLElement
+const FruitAmountElement = document.getElementById('FruitAmountElement') as HTMLElement
+const FruitPerSecondElement = document.getElementById('FruitPerSecondElement') as HTMLElement
+const OnePerSecond = document.getElementById('OnePerSecond') as HTMLElement
+const ThreePerSecond = document.getElementById('ThreePerSecond') as HTMLElement
+const FivePerSecond = document.getElementById('FivePerSecond') as HTMLElement
+const TenPerSecond = document.getElementById('TenPerSecond') as HTMLElement
 export let FruitAmount = 0
 let PriceIncrease = 1 // starting amount
 let ClickMultiplier = 1 // starting amount
@@ -25,13 +25,13 @@ function DisplayShop () {
     OnePerSecond.textContent = `+1 Fruit Per Second:  Fruit`
 }
 
-export function SetFruitAmount (NewAmount, NewFruitPerSecond) {
+export function SetFruitAmount (NewAmount: number, NewFruitPerSecond: number) {
     FruitAmount = NewAmount
     FruitPerSecond = NewFruitPerSecond
     DisplayFruit()
     UpdateButtonStatus()
 }
-window.SetFruitAmount = SetFruitAmount
+
 
 
 
@@ -39,12 +39,12 @@ export function GetFruitAmount () {
     return FruitAmount
 }
 
-window.GetFruitAmount = GetFruitAmount
+
 
 export function GetFruitPerSecond () {
     return FruitPerSecond
 }
-window.GetFruitPerSecond = GetFruitPerSecond
+
 
 // clicking fruit system
 Fruit.addEventListener('click', ()=> {

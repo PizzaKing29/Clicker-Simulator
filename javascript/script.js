@@ -4,8 +4,8 @@ exports.FruitPerSecond = exports.FruitAmount = void 0;
 exports.SetFruitAmount = SetFruitAmount;
 exports.GetFruitAmount = GetFruitAmount;
 exports.GetFruitPerSecond = GetFruitPerSecond;
-const format_js_1 = require("./typescript/format.js");
-const shop_js_1 = require("./typescript/shop.js");
+const format_js_1 = require("./javascript/format.js");
+const shop_ts_1 = require("./typescript/shop.ts");
 const Fruit = document.getElementById('Fruit');
 const FruitAmountElement = document.getElementById('FruitAmountElement');
 const FruitPerSecondElement = document.getElementById('FruitPerSecondElement');
@@ -29,17 +29,14 @@ function SetFruitAmount(NewAmount, NewFruitPerSecond) {
     exports.FruitAmount = NewAmount;
     exports.FruitPerSecond = NewFruitPerSecond;
     DisplayFruit();
-    (0, shop_js_1.UpdateButtonStatus)();
+    (0, shop_ts_1.UpdateButtonStatus)();
 }
-window.SetFruitAmount = SetFruitAmount;
 function GetFruitAmount() {
     return exports.FruitAmount;
 }
-window.GetFruitAmount = GetFruitAmount;
 function GetFruitPerSecond() {
     return exports.FruitPerSecond;
 }
-window.GetFruitPerSecond = GetFruitPerSecond;
 // clicking fruit system
 Fruit.addEventListener('click', () => {
     exports.FruitAmount += 1 * ClickMultiplier;
@@ -49,7 +46,7 @@ Fruit.addEventListener('click', () => {
 function IncrementFruit() {
     exports.FruitAmount += exports.FruitPerSecond;
     DisplayFruit();
-    (0, shop_js_1.UpdateButtonStatus)();
+    (0, shop_ts_1.UpdateButtonStatus)();
     DisplayShop();
 }
 setInterval(IncrementFruit, 1000);

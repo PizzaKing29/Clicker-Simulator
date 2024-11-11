@@ -4,7 +4,7 @@ exports.formatter = formatter;
 function formatter(number) {
     if (number < 1000)
         return Math.round(number);
-    const match = [
+    var match = [
         { value: 1e3, Symbol: "K" },
         { value: 1e6, Symbol: "Million" },
         { value: 1e9, Symbol: "Billion" },
@@ -37,7 +37,7 @@ function formatter(number) {
         { value: 1e90, Symbol: "Novenvigintillion" },
         { value: 1e93, Symbol: "Trigintillion" }
     ];
-    let item = match.findLast(function (object) {
+    var item = match.findLast(function (object) {
         return number >= object.value;
     });
     if (!item) {

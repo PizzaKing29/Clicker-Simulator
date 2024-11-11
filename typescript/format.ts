@@ -1,4 +1,4 @@
-export function formatter (number) {
+export function formatter (number: number) {
 
     if (number < 1000) return Math.round(number)
 
@@ -36,7 +36,13 @@ export function formatter (number) {
         {value: 1e93, Symbol: "Trigintillion"}
     ]
 
-    let item = match.findLast(function(object){return number >= object.value})
+    let item = match.findLast(function(object){
+        return number >= object.value
+    })
+
+    if(!item) {
+        return "Number isnt in the list"
+    }
 
     return (number / item.value).toFixed(2) + item.Symbol
 
