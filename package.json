@@ -1,5 +1,18 @@
 {
   "dependencies": {
     "express": "^4.21.1"
-  }
+  },
+  "name": "clicker-simulator",
+  "version": "1.0.0",
+  "description": "List of stuff im gonna add",
+  "main": "index.js",
+  "devDependencies": {
+    "typescript": "^5.6.3"
+  },
+  "scripts": {
+    "start": "tsc --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }
