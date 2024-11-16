@@ -1,4 +1,4 @@
-import { GetFruitAmount, GetFruitPerSecond, SetFruitAmount } from "./script"
+import { GetFruitAmount, GetFruitPerSecond, SetFruitAmount } from "./script.js"
 
 const ClickSound = new Audio('Audio/click.mp3')
 

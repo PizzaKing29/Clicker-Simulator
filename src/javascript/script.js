@@ -1,5 +1,5 @@
-import { formatter } from './format';
-import { UpdateButtonStatus } from './shop';
+import { formatter } from './format.js';
+import { UpdateButtonStatus } from './shop.js';
 const Fruit = document.getElementById('Fruit');
 const FruitAmountElement = document.getElementById('FruitAmountElement');
 const FruitPerSecondElement = document.getElementById('FruitPerSecondElement');
