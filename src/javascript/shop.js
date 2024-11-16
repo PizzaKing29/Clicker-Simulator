@@ -1,27 +1,21 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.PurchaseFruitPerSecond = PurchaseFruitPerSecond;
-exports.PurchaseUpgrades = PurchaseUpgrades;
-exports.PurchasePotions = PurchasePotions;
-exports.UpdateButtonStatus = UpdateButtonStatus;
-const script_1 = require("../script");
+import { GetFruitAmount, GetFruitPerSecond, SetFruitAmount } from "./script";
 const ClickSound = new Audio('Audio/click.mp3');
-function PurchaseFruitPerSecond(FruitValue) {
-    let FruitAmount = (0, script_1.GetFruitAmount)();
-    let FruitPerSecond = (0, script_1.GetFruitPerSecond)();
+export function PurchaseFruitPerSecond(FruitValue) {
+    let FruitAmount = GetFruitAmount();
+    let FruitPerSecond = GetFruitPerSecond();
     ClickSound.play();
     if (FruitAmount > FruitValue) {
-        (0, script_1.SetFruitAmount)(FruitAmount - FruitValue, FruitPerSecond += FruitValue);
+        SetFruitAmount(FruitAmount - FruitValue, FruitPerSecond += FruitValue);
         console.log();
     }
 }
-function PurchaseUpgrades(FruitValue) {
+export function PurchaseUpgrades(FruitValue) {
 }
-function PurchasePotions(FruitValue) {
+export function PurchasePotions(FruitValue) {
 }
-function UpdateButtonStatus() {
+export function UpdateButtonStatus() {
     const Buttons = document.querySelectorAll('button');
-    let FruitAmount = (0, script_1.GetFruitAmount)();
+    let FruitAmount = GetFruitAmount();
     Buttons.forEach(button => {
         const ButtonValue = Number(button.value);
         if (FruitAmount < ButtonValue) {

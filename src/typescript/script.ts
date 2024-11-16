@@ -1,5 +1,5 @@
-import { formatter } from './javascript/format.js'
-import { UpdateButtonStatus } from './typescript/shop.ts'
+import { formatter } from './format'
+import { UpdateButtonStatus } from './shop'
 
 const Fruit = document.getElementById('Fruit') as HTMLElement
 const FruitAmountElement = document.getElementById('FruitAmountElement') as HTMLElement

@@ -1,7 +1,4 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.formatter = formatter;
-function formatter(number) {
+export function formatter(number) {
     if (number < 1000)
         return Math.round(number);
     const match = [
