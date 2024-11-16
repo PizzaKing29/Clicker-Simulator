@@ -1,8 +1,6 @@
 import { formatter } from './javascript/format.js'
 import { UpdateButtonStatus } from './typescript/shop.ts'
 
-
-
 const Fruit = document.getElementById('Fruit') as HTMLElement
 const FruitAmountElement = document.getElementById('FruitAmountElement') as HTMLElement
 const FruitPerSecondElement = document.getElementById('FruitPerSecondElement') as HTMLElement
@@ -10,10 +8,11 @@ const OnePerSecond = document.getElementById('OnePerSecond') as HTMLElement
 const ThreePerSecond = document.getElementById('ThreePerSecond') as HTMLElement
 const FivePerSecond = document.getElementById('FivePerSecond') as HTMLElement
 const TenPerSecond = document.getElementById('TenPerSecond') as HTMLElement
-export let FruitAmount = 0
-let PriceIncrease = 1 // starting amount
-let ClickMultiplier = 1 // starting amount
-export let FruitPerSecond = 1
+
+export let FruitAmount: number = 0
+let PriceIncrease: number = 1 // starting amount
+let ClickMultiplier: number = 1 // starting amount
+export let FruitPerSecond: number = 1
 
 // update fruit amount
 function DisplayFruit () {
