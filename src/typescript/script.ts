@@ -9,7 +9,7 @@ const OnePerSecond = document.getElementById('OnePerSecond') as HTMLElement
 const ThreePerSecond = document.getElementById('ThreePerSecond') as HTMLElement
 const FivePerSecond = document.getElementById('FivePerSecond') as HTMLElement
 const TenPerSecond = document.getElementById('TenPerSecond') as HTMLElement
-
+const ResetProgress = document.getElementById('ResetProgress') as HTMLElement
 
 
 export let FruitAmount: number = Number(localStorage.getItem("FruitAmount"))
@@ -75,3 +75,13 @@ export function UpdateLocalStorage () {
     localStorage.setItem("FruitAmount", FruitAmount.toString())
     localStorage.setItem("FruitPerSecond", FruitPerSecond.toString())
 }
+
+ResetProgress.addEventListener('dblclick', () => {
+    localStorage.clear()
+    FruitAmount = 0
+    FruitPerSecond = 1
+    DisplayFruit()
+    UpdateButtonStatus()
+    DisplayShop()
+    UpdateLocalStorage()
+})
