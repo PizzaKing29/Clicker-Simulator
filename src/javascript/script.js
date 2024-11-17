@@ -15,8 +15,18 @@ export let FruitPerSecond = Number(localStorage.getItem("FruitPerSecond"));
 UpdateLocalStorage();
 // update fruit amount
 function DisplayFruit() {
-    FruitAmountElement.textContent = `Fruit Amount: ${formatter(FruitAmount)}`;
-    FruitPerSecondElement.textContent = `${formatter(FruitPerSecond)} Fruit Per Second`;
+    if (FruitAmount >= Infinity) {
+        FruitAmountElement.textContent = `Fruit Amount: ${FruitAmount}`;
+    }
+    else {
+        FruitAmountElement.textContent = `Fruit Amount: ${formatter(FruitAmount)}`;
+    }
+    if (FruitPerSecond >= Infinity) {
+        FruitPerSecondElement.textContent = `${FruitPerSecond} Fruit Per Second`;
+    }
+    else {
+        FruitPerSecondElement.textContent = `${formatter(FruitPerSecond)} Fruit Per Second`;
+    }
 }
 DisplayFruit();
 function DisplayShop() {
