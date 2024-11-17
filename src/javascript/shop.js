@@ -16,6 +16,7 @@ export function PurchasePotions(FruitValue) {
 export function UpdateButtonStatus() {
     const Buttons = document.querySelectorAll('button');
     let FruitAmount = GetFruitAmount();
+    // turns buttons to be disabled if you dont have enough fruit
     Buttons.forEach(button => {
         const ButtonValue = Number(button.value);
         if (FruitAmount < ButtonValue) {

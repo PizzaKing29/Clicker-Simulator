@@ -7,7 +7,7 @@ const OnePerSecond = document.getElementById('OnePerSecond');
 const ThreePerSecond = document.getElementById('ThreePerSecond');
 const FivePerSecond = document.getElementById('FivePerSecond');
 const TenPerSecond = document.getElementById('TenPerSecond');
-export let FruitAmount = 0;
+export let FruitAmount = Number(localStorage.getItem("FruitAmount"));
 let PriceIncrease = 1; // starting amount
 let ClickMultiplier = 1; // starting amount
 export let FruitPerSecond = 1;
@@ -16,9 +16,11 @@ function DisplayFruit() {
     FruitAmountElement.textContent = `Fruit Amount: ${formatter(FruitAmount)}`;
     FruitPerSecondElement.textContent = `${formatter(FruitPerSecond)} Fruit Per Second`;
 }
+DisplayFruit();
 function DisplayShop() {
     OnePerSecond.textContent = `+1 Fruit Per Second:  Fruit`;
 }
+DisplayShop();
 export function SetFruitAmount(NewAmount, NewFruitPerSecond) {
     FruitAmount = NewAmount;
     FruitPerSecond = NewFruitPerSecond;
@@ -37,10 +39,12 @@ Fruit.addEventListener('click', () => {
     DisplayFruit();
     DisplayShop();
 });
+// adds to your fruit count every second
 function IncrementFruit() {
     FruitAmount += FruitPerSecond;
     DisplayFruit();
     UpdateButtonStatus();
     DisplayShop();
+    localStorage.setItem("FruitAmount", FruitAmount.toString());
 }
 setInterval(IncrementFruit, 1000);

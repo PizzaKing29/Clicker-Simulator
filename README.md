@@ -13,3 +13,8 @@ Different currencys
 
 
 save/load button
+
+
+
+
+make the formatter not say InfinityTrigintillion
