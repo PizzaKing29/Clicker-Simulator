@@ -1,6 +1,7 @@
 import { formatter } from './format.js'
 import { UpdateButtonStatus } from './shop.js'
 
+
 const Fruit = document.getElementById('Fruit') as HTMLElement
 const FruitAmountElement = document.getElementById('FruitAmountElement') as HTMLElement
 const FruitPerSecondElement = document.getElementById('FruitPerSecondElement') as HTMLElement
@@ -11,12 +12,12 @@ const TenPerSecond = document.getElementById('TenPerSecond') as HTMLElement
 
 
 
-export let FruitAmount: any = Number(localStorage.getItem("FruitAmount"))
+export let FruitAmount: number = Number(localStorage.getItem("FruitAmount"))
 let PriceIncrease: number = 1 // starting amount
 let ClickMultiplier: number = 1 // starting amount
-export let FruitPerSecond: number = 1
+export let FruitPerSecond: number = Number(localStorage.getItem("FruitPerSecond"))
 
-
+UpdateLocalStorage()
 
 // update fruit amount
 function DisplayFruit () {
@@ -65,7 +66,12 @@ function IncrementFruit() {
     DisplayFruit()
     UpdateButtonStatus()
     DisplayShop()
-    localStorage.setItem("FruitAmount", FruitAmount.toString())
+    UpdateLocalStorage()
 }
 
 setInterval(IncrementFruit, 1000)
+
+export function UpdateLocalStorage () {
+    localStorage.setItem("FruitAmount", FruitAmount.toString())
+    localStorage.setItem("FruitPerSecond", FruitPerSecond.toString())
+}

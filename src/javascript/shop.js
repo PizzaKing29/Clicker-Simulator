@@ -1,12 +1,19 @@
-import { GetFruitAmount, GetFruitPerSecond, SetFruitAmount } from "./script.js";
+import { GetFruitAmount, GetFruitPerSecond, SetFruitAmount, UpdateLocalStorage } from "./script.js";
 const ClickSound = new Audio('Audio/click.mp3');
-export function PurchaseFruitPerSecond(FruitValue) {
+const Shop = document.querySelectorAll('.Shop');
+Shop.forEach(button => {
+    button.addEventListener('click', () => {
+        const FruitValue = parseInt(button.value);
+        UpdateLocalStorage();
+        PurchaseFruitPerSecond(FruitValue);
+    });
+});
+function PurchaseFruitPerSecond(FruitValue) {
     let FruitAmount = GetFruitAmount();
     let FruitPerSecond = GetFruitPerSecond();
     ClickSound.play();
     if (FruitAmount > FruitValue) {
         SetFruitAmount(FruitAmount - FruitValue, FruitPerSecond += FruitValue);
-        console.log();
     }
 }
 export function PurchaseUpgrades(FruitValue) {

@@ -10,7 +10,8 @@ const TenPerSecond = document.getElementById('TenPerSecond');
 export let FruitAmount = Number(localStorage.getItem("FruitAmount"));
 let PriceIncrease = 1; // starting amount
 let ClickMultiplier = 1; // starting amount
-export let FruitPerSecond = 1;
+export let FruitPerSecond = Number(localStorage.getItem("FruitPerSecond"));
+UpdateLocalStorage();
 // update fruit amount
 function DisplayFruit() {
     FruitAmountElement.textContent = `Fruit Amount: ${formatter(FruitAmount)}`;
@@ -45,6 +46,10 @@ function IncrementFruit() {
     DisplayFruit();
     UpdateButtonStatus();
     DisplayShop();
-    localStorage.setItem("FruitAmount", FruitAmount.toString());
+    UpdateLocalStorage();
 }
 setInterval(IncrementFruit, 1000);
+export function UpdateLocalStorage() {
+    localStorage.setItem("FruitAmount", FruitAmount.toString());
+    localStorage.setItem("FruitPerSecond", FruitPerSecond.toString());
+}
