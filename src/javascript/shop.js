@@ -1,4 +1,4 @@
-import { FruitAmount, SetFruitAmount, UpdateLocalStorage, FruitPerSecondFunction } from "./script.js";
+import { FruitAmount, SetFruitAmount, UpdateLocalStorage, FruitPerSecondFunction, } from "./script.js";
 const ClickSound = new Audio('Audio/click.mp3');
 const Shop = document.querySelectorAll('.Shop');
 const ShopContainer = document.getElementById('ShopContainer');
@@ -18,6 +18,7 @@ function PurchaseFruitPerSecond(FruitValue) {
 }
 ShopContainer?.addEventListener('click', () => {
     const ClickedButton = event?.target;
+    console.log(ClickedButton.dataset.value);
 });
 export function UpdateButtonStatus() {
     const Buttons = document.querySelectorAll('button');

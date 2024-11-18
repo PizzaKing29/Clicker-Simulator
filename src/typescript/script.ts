@@ -63,6 +63,14 @@ DisplayFruit()
 DisplayShop()
 
 
+
+// USE THIS AND COMBINE OLD FUNCTIONS
+function TextUpdates () {
+
+}
+
+
+
 // update fruit amount
 function DisplayFruit () {
     if (FruitAmount >= Infinity) {

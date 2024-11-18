@@ -1,4 +1,4 @@
-import { FruitAmount, SetFruitAmount, UpdateLocalStorage, FruitPerSecondFunction, FruitPerSecondFunction } from "./script.js"
+import { FruitAmount, SetFruitAmount, UpdateLocalStorage, FruitPerSecondFunction, } from "./script.js"
 
 const ClickSound = new Audio('Audio/click.mp3')
 const Shop = document.querySelectorAll('.Shop')
@@ -23,8 +23,8 @@ function PurchaseFruitPerSecond(FruitValue: number) {
 
 
 ShopContainer?.addEventListener('click', () => {
-    const ClickedButton = event?.target
-    
+    const ClickedButton = event?.target as HTMLElement
+    console.log(ClickedButton.dataset.value)
 })
 
 
