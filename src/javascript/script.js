@@ -8,9 +8,29 @@ const ThreePerSecond = document.getElementById('ThreePerSecond');
 const FivePerSecond = document.getElementById('FivePerSecond');
 const TenPerSecond = document.getElementById('TenPerSecond');
 const ResetProgress = document.getElementById('ResetProgress');
+let Prices = {};
+{
+    a: 5;
+}
+Fruit: 1, Price;
+20,
+    Fruit;
+3, Price;
+25,
+    Fruit;
+5, Price;
+30,
+    Fruit;
+10, Price;
+35,
+    Fruit;
+15, Price;
+40,
+;
 export let FruitAmount = Number(localStorage.getItem("FruitAmount"));
 let PriceIncrease = 1; // starting amount
 let ClickMultiplier = 1; // starting amount
+let FruitIncrease = 1;
 export let FruitPerSecond = Number(localStorage.getItem("FruitPerSecond"));
 UpdateLocalStorage();
 // update fruit amount
@@ -30,7 +50,7 @@ function DisplayFruit() {
 }
 DisplayFruit();
 function DisplayShop() {
-    OnePerSecond.textContent = `+1 Fruit Per Second:  Fruit`;
+    OnePerSecond.textContent = `+${Prices} Fruit Per Second: 15 Fruit`;
 }
 DisplayShop();
 export function SetFruitAmount(NewAmount, NewFruitPerSecond) {

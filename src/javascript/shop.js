@@ -14,6 +14,7 @@ function PurchaseFruitPerSecond(FruitValue) {
     ClickSound.play();
     if (FruitAmount > FruitValue) {
         SetFruitAmount(FruitAmount - FruitValue, FruitPerSecond += FruitValue);
+        console.log(FruitValue);
     }
 }
 export function PurchaseUpgrades(FruitValue) {

@@ -11,10 +11,37 @@ const FivePerSecond = document.getElementById('FivePerSecond') as HTMLElement
 const TenPerSecond = document.getElementById('TenPerSecond') as HTMLElement
 const ResetProgress = document.getElementById('ResetProgress') as HTMLElement
 
+type ShopItem = {
+    Fruit: number
+    Price: number
+}
+
+type Prices = {
+    Shop: ShopItem[]
+    Upgrades: ShopItem[]
+}
+
+let Prices: Prices = {
+    Shop: [
+        {Fruit: 1, Price: 20},
+        {Fruit: 3, Price: 25},
+        {Fruit: 5, Price: 30},
+        {Fruit: 10, Price: 35},
+        {Fruit: 15, Price: 40}
+    ],
+
+    Upgrades: [
+        {Fruit: 2, Price: 100},
+        {Fruit: 5, Price: 250},
+        {Fruit: 10, Price: 650}
+    ]
+}
+
 
 export let FruitAmount: number = Number(localStorage.getItem("FruitAmount"))
 let PriceIncrease: number = 1 // starting amount
 let ClickMultiplier: number = 1 // starting amount
+let FruitIncrease: number = 1
 export let FruitPerSecond: number = Number(localStorage.getItem("FruitPerSecond"))
 
 UpdateLocalStorage()
@@ -36,7 +63,7 @@ function DisplayFruit () {
 DisplayFruit()
 
 function DisplayShop () {
-    OnePerSecond.textContent = `+1 Fruit Per Second:  Fruit`
+    OnePerSecond.textContent = `+${Prices} Fruit Per Second: 15 Fruit`
 }
 DisplayShop()
 
@@ -47,14 +74,9 @@ export function SetFruitAmount (NewAmount: number, NewFruitPerSecond: number) {
     UpdateButtonStatus()
 }
 
-
-
-
 export function GetFruitAmount () {
     return FruitAmount
 }
-
-
 
 export function GetFruitPerSecond () {
     return FruitPerSecond
