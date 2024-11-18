@@ -1,7 +1,8 @@
-import { GetFruitAmount, GetFruitPerSecond, SetFruitAmount, UpdateLocalStorage } from "./script.js"
+import { FruitAmount, SetFruitAmount, UpdateLocalStorage, FruitPerSecondFunction, FruitPerSecondFunction } from "./script.js"
 
 const ClickSound = new Audio('Audio/click.mp3')
 const Shop = document.querySelectorAll('.Shop')
+const ShopContainer = document.getElementById('ShopContainer')
 
 Shop.forEach(button => {
     button.addEventListener('click', () => {
@@ -13,28 +14,25 @@ Shop.forEach(button => {
 
 
 function PurchaseFruitPerSecond(FruitValue: number) {
-    let FruitAmount = GetFruitAmount()
-    let FruitPerSecond = GetFruitPerSecond()
     ClickSound.play()
+    let FruitPerSecond = FruitPerSecondFunction()
     if (FruitAmount > FruitValue) {
         SetFruitAmount(FruitAmount - FruitValue, FruitPerSecond += FruitValue)
-        console.log(FruitValue)
     }
 }
 
-export function PurchaseUpgrades(FruitValue: number) {
+
+ShopContainer?.addEventListener('click', () => {
+    const ClickedButton = event?.target
     
-}
+})
 
 
-export function PurchasePotions(FruitValue: number) {
 
-}
 
 
 export function UpdateButtonStatus() {
     const Buttons = document.querySelectorAll('button')
-    let FruitAmount = GetFruitAmount()
 
     // turns buttons to be disabled if you dont have enough fruit
     Buttons.forEach(button => {
