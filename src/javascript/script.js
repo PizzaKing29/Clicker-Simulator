@@ -16,6 +16,7 @@ export function FruitPerSecondFunction() {
     return FruitPerSecond;
     // this function because of an import error, I cant reasign a value
 }
+TextUpdates();
 // type ShopItem = {
 //     Fruit: number
 //     Price: number

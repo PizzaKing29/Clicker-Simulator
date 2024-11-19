@@ -19,60 +19,65 @@
                 <h2>Shop</h2>
                 <div class="ShopPartsContainer">
                     <p id="OnePerSecond">+1 Fruit Per Second: # Fruit</p>
-                    <button class="Shop" data-value="0">Purchase</button>
+                    <button class="Shop" data-array="0" data-category="Shop">Purchase</button>
                 </div>
                 <div class="ShopPartsContainer">
                     <p id="ThreePerSecond">+3 Fruit Per Second: # Fruit</p>
-                    <button class="Shop">Purchase</button>
+                    <button class="Shop" data-array="1" data-category="Shop">Purchase</button>
                 </div>
                 <div class="ShopPartsContainer">
                     <p id="FivePerSecond">+5 Fruit Per Second: # Fruit</p>
-                    <button class="Shop">Purchase</button>
+                    <button class="Shop" data-array="2" data-category="Shop">Purchase</button>
                 </div>
                 <div class="ShopPartsContainer">
                     <p id="TenPerSecond">+10 Fruit Per Second: # Fruit</p>
-                    <button class="Shop">Purchase</button>
+                    <button class="Shop" data-array="3" data-category="Shop">Purchase</button>
                 </div>
                 <div class="ShopPartsContainer">
                     <p id="FifteenPerSecond">+15 Fruit Per Second: # Fruit</p>
-                    <button class="Shop">Purchase</button>
+                    <button class="Shop" data-array="4" data-category="Shop">Purchase</button>
                 </div>
                 <div class="ShopPartsContainer">
                     <p >Mega Fruit: # Fruit (1/20 for x5 Fruit)</p>
-                    <button onclick="PurchaseFruitPerSecond()">Purchase</button>
+                    <button data-array="5">Purchase</button>
                 </div>
 
 
                 <h2>Shop Upgrades</h2>
                 <div class="ShopPartsContainer">
                     <p>+2 Fruit Earned: # Fruit</p>
-                    <button onclick="PurchaseUpgrades(2)">Purchase</button>
+                    <button data-array="0" data-category="ShopUpgrades">Purchase</button>
                 </div>
                 <div class="ShopPartsContainer">
                     <p>+5 Fruit Earned: # Fruit</p>
-                    <button onclick="PurchaseUpgrades(5)">Purchase</button>
+                    <button data-array="1" data-category="ShopUpgrades">Purchase</button>
                 </div>
                 <div class="ShopPartsContainer">
                     <p>+10 Fruit Earned: # Fruit</p>
-                    <button onclick="PurchaseUpgrades(10)">Purchase</button>
+                    <button data-array="2" data-category="ShopUpgrades">Purchase</button>
+                </div>
+                <div class="ShopPartsContainer">
+                    <p>+15 Fruit Earned: # Fruit</p>
+                    <button data-array="3" data-category="ShopUpgrades">Purchase</button>
                 </div>
                 
 
                 <h2>Buy Potions</h2>
                 <div class="ShopPartsContainer">
-                <p>x1.5 Fruit: 5 Minutes</p>
-                <button onclick="PurchasePotions(1.5)">Purchase</button>
+                    <p>x1.5 Fruit: 5 Minutes</p>
+                    <button data-array="0" data-category="ShopPotions">Purchase</button>
                 </div>
                 <div class="ShopPartsContainer">
                     <p>x5 Fruit: 20 Minutes</p>
-                    <button onclick="PurchasePotions(5)">Purchase</button>
+                    <button data-array="1" data-category="ShopPotions">Purchase</button>
                 </div>
             </div>
 
             
             <div>
                 <h2>Prestige</h2>
-                <p>x2 Fruit Per Second: # Fruit</p> <button  >Purchase</button>
+                <p>x2 Fruit Per Second: # Fruit</p> 
+                <button data-array="0" data-category="Prestige">Purchase</button>
             </div>
     </div>
     <button id="ResetProgress">Reset Progress</button>
