@@ -58,15 +58,16 @@ export let Prices = {
     ]
 }
 
-UpdateLocalStorage()
-DisplayFruit()
-DisplayShop()
 
 
 
-// USE THIS AND COMBINE OLD FUNCTIONS
-function TextUpdates () {
 
+export function TextUpdates () {
+    localStorage.setItem("FruitAmount", FruitAmount.toString())
+    localStorage.setItem("FruitPerSecond", FruitPerSecond.toString())
+
+    OnePerSecond.textContent = `+${false} Fruit Per Second: ${false} Fruit`
+    DisplayFruit()
 }
 
 
@@ -86,16 +87,11 @@ function DisplayFruit () {
     }
 }
 
-function DisplayShop () {
-    OnePerSecond.textContent = `+${false} Fruit Per Second: ${false} Fruit`
-}
 
 
 export function SetFruitAmount (NewAmount: number, NewFruitPerSecond: number) {
     FruitAmount = NewAmount
     FruitPerSecond = NewFruitPerSecond
-    DisplayFruit()
-    UpdateButtonStatus()
 }
 
 
@@ -103,26 +99,16 @@ export function SetFruitAmount (NewAmount: number, NewFruitPerSecond: number) {
 // clicking fruit system
 Fruit.addEventListener('click', ()=> {
     FruitAmount += 1 * ClickMultiplier
-    DisplayFruit()
-    DisplayShop()
 })
 
 
 // adds to your fruit count every second
 function IncrementFruit() {
     FruitAmount += FruitPerSecond
-    DisplayFruit()
-    UpdateButtonStatus()
-    DisplayShop()
-    UpdateLocalStorage()
+    TextUpdates()
 }
-
 setInterval(IncrementFruit, 1000)
 
-export function UpdateLocalStorage () {
-    localStorage.setItem("FruitAmount", FruitAmount.toString())
-    localStorage.setItem("FruitPerSecond", FruitPerSecond.toString())
-}
 
 
 // resets progress
@@ -130,8 +116,5 @@ ResetProgress.addEventListener('dblclick', () => {
     localStorage.clear()
     FruitAmount = 0
     FruitPerSecond = 1
-    DisplayFruit()
-    UpdateButtonStatus()
-    DisplayShop()
-    UpdateLocalStorage()
+    TextUpdates()
 })
