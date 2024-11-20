@@ -17,11 +17,16 @@ Accent: #F2A74B
   }
 
 body {
-    background-color: #d3d3d3;
+    background-color: #000000;
+}
+
+p {
+    font-weight: bold;
+    font-size: 1.5rem;
 }
 
 button {
-    background-color: #59b559;
+    background-color: #0051ff;
     border: none;
     border-radius: 0.25rem;
     font-weight: bold;
@@ -33,7 +38,7 @@ button:hover {
 }
 
 button:disabled {
-    background-color: #45433E;
+    background-color: #1b1b1b;
 }
 
 
@@ -45,7 +50,7 @@ button:disabled {
     margin: auto;
     margin-bottom: 1rem;
     padding: 2.5rem;
-    background-color: #292929;
+    background-color: #222222;
     justify-content: center;
     align-items: center;
     border-radius: 1rem;
@@ -63,7 +68,7 @@ button:disabled {
 }
 
 .ShopPartsContainer {
-    background-color: #292929;
+    background-color: #222222;
     height: 8rem;
     max-width: 20%;
     border-radius: 1rem;
@@ -74,7 +79,7 @@ button:disabled {
 
 #FruitAmountElement {
     display: flex;
-    background-color: #292929;
+    background-color: #222222;
     justify-content: center;
     align-items: center;
     max-width: 35%;
@@ -88,7 +93,32 @@ button:disabled {
     display: flex;
     max-width: fit-content;
     margin: auto;
-    background-color: #292929;
+    background-color: #222222;
     padding: 0.5rem 1rem;
     border-radius: 1rem;
+}
+
+/* Prestige Section */
+#ResetProgress {
+    margin-top: 2rem;
+    background-color: #F25D50;
+    color: #ffffff;
+    padding: 0.5rem 1.5rem;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 0.5rem;
+    box-shadow: 0 0 10px #F25D50, 0 0 20px #F25D50;
+    transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+#ResetProgress:hover {
+    background-color: #FF5733;
+    transform: scale(1.1);
+    box-shadow: 0 0 20px #FF5733, 0 0 40px #FF5733;
+}
+
+#ResetProgress:active {
+    background-color: #FF1744; /* A deeper red */
+    box-shadow: 0 0 25px #FF1744, 0 0 50px #FF1744;
+    transform: scale(1.05);
 }
