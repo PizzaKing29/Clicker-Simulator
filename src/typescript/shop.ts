@@ -1,4 +1,4 @@
-import { FruitAmount, SetFruitAmount,  FruitPerSecondFunction, Prices, TextUpdates } from "./script.js"
+import { FruitAmount, SetFruitAmount, FruitPerSecondFunction, Prices, TextUpdates, FruitPerSecond } from "./script.js"
 
 const ClickSound = new Audio('Audio/click.mp3')
 const Shop = document.querySelectorAll('.Shop')
@@ -24,23 +24,30 @@ function PurchaseFruitPerSecond(FruitValue: number) {
 
 ShopContainer?.addEventListener('click', () => {
     const ClickedButton = event?.target as HTMLElement
+    const Category = ClickedButton.dataset.category
     const Value = Number(ClickedButton.dataset.array)
 
-if (ClickedButton.dataset.category === "Shop") {
-    console.log(Prices.Shop[Value].FruitPerSecond)
-}
+    const ShopItem = Prices.Shop[Value]
+    const ShopUpgrades = Prices.ShopUpgrades[Value]
+    const ShopPotions = Prices.ShopPotions[Value]
+    const PrestigeShop = Prices.PrestigeShop[Value]
 
-if (ClickedButton.dataset.category === "ShopUpgrades") {
-    console.log(Prices.ShopUpgrades[Value].FruitFromClick)
-}
 
-if (ClickedButton.dataset.category === "ShopPotions") {
-    console.log(Prices.ShopPotions[Value].FruitMultiplier)
-}
+    if (Category === "Shop" && FruitAmount > ShopItem.Price) {
+        SetFruitAmount(FruitAmount - ShopItem.Price, ShopItem.FruitPerSecond ?? 0)
+    }
 
-if (ClickedButton.dataset.category === "Prestige") {
-    console.log(Prices.PrestigeShop[Value].FruitPerSecondMultiplier)
-}
+    if (Category === "ShopUpgrades") {
+        console.log(ShopUpgrades.FruitFromClick)
+    }
+
+    if (Category === "ShopPotions") {
+        console.log(ShopPotions.FruitMultiplier)
+    }
+
+    if (Category === "Prestige") {
+        console.log(PrestigeShop.FruitPerSecondMultiplier)
+    }
 
 })
 

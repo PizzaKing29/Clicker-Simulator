@@ -66,16 +66,17 @@ function DisplayFruit() {
         FruitPerSecondElement.textContent = `${FruitPerSecond} Fruit Per Second`;
     }
     else {
-        FruitPerSecondElement.textContent = `${formatter(FruitPerSecond)} Fruit Per Second`;
+        FruitPerSecondElement.textContent = `${formatter(Number(FruitPerSecond.toFixed(5)))} Fruit Per Second`;
     }
 }
 export function SetFruitAmount(NewAmount, NewFruitPerSecond) {
     FruitAmount = NewAmount;
-    FruitPerSecond = NewFruitPerSecond;
+    FruitPerSecond += NewFruitPerSecond;
 }
 // clicking fruit system
 Fruit.addEventListener('click', () => {
     FruitAmount += 1 * ClickMultiplier;
+    TextUpdates();
 });
 // adds to your fruit count every second
 function IncrementFruit() {

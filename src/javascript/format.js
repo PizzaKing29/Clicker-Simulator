@@ -1,6 +1,6 @@
-export function formatter(number) {
+export function formatter(number, decimals = 2) {
     if (number < 1000)
-        return Math.round(number);
+        return number.toFixed(decimals);
     const match = [
         { value: 1e3, Symbol: "K" },
         { value: 1e6, Symbol: "Million" },

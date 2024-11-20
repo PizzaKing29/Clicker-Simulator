@@ -18,18 +18,23 @@ function PurchaseFruitPerSecond(FruitValue) {
 }
 ShopContainer?.addEventListener('click', () => {
     const ClickedButton = event?.target;
+    const Category = ClickedButton.dataset.category;
     const Value = Number(ClickedButton.dataset.array);
-    if (ClickedButton.dataset.category === "Shop") {
-        console.log(Prices.Shop[Value].FruitPerSecond);
+    const ShopItem = Prices.Shop[Value];
+    const ShopUpgrades = Prices.ShopUpgrades[Value];
+    const ShopPotions = Prices.ShopPotions[Value];
+    const PrestigeShop = Prices.PrestigeShop[Value];
+    if (Category === "Shop" && FruitAmount > ShopItem.Price) {
+        SetFruitAmount(FruitAmount - ShopItem.Price, ShopItem.FruitPerSecond ?? 0);
     }
-    if (ClickedButton.dataset.category === "ShopUpgrades") {
-        console.log(Prices.ShopUpgrades[Value].FruitFromClick);
+    if (Category === "ShopUpgrades") {
+        console.log(ShopUpgrades.FruitFromClick);
     }
-    if (ClickedButton.dataset.category === "ShopPotions") {
-        console.log(Prices.ShopPotions[Value].FruitMultiplier);
+    if (Category === "ShopPotions") {
+        console.log(ShopPotions.FruitMultiplier);
     }
-    if (ClickedButton.dataset.category === "Prestige") {
-        console.log(Prices.PrestigeShop[Value].FruitPerSecondMultiplier);
+    if (Category === "Prestige") {
+        console.log(PrestigeShop.FruitPerSecondMultiplier);
     }
 });
 export function UpdateButtonStatus() {
