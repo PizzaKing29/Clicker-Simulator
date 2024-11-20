@@ -13,7 +13,7 @@ ShopContainer?.addEventListener('click', () => {
     const Category = ClickedButton.dataset.category
     const Value = Number(ClickedButton.dataset.array)
 
-    const ShopItem = Prices.Shop[Value]
+    var ShopItem = Prices.Shop[Value]
     const ShopUpgrades = Prices.ShopUpgrades[Value]
     const ShopPotions = Prices.ShopPotions[Value]
     const PrestigeShop = Prices.PrestigeShop[Value]
