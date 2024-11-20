@@ -13,3 +13,5 @@ Different currencys
 
 
 save/load button
+
+make an anti auto clicker (max 20cps)

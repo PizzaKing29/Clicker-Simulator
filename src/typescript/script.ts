@@ -1,6 +1,4 @@
 import { formatter } from './format.js'
-import { UpdateButtonStatus } from './shop.js'
-
 
 const Fruit = document.getElementById('Fruit') as HTMLElement
 const FruitAmountElement = document.getElementById('FruitAmountElement') as HTMLElement
@@ -16,22 +14,17 @@ let PriceIncrease: number = 1 // starting amount
 let ClickMultiplier: number = 1 // starting amount
 let FruitIncrease: number = 1
 export let FruitPerSecond: number = Number(localStorage.getItem("FruitPerSecond"))
-export function FruitPerSecondFunction() {
-    return FruitPerSecond
-    // this function because of an import error, I cant reasign a value
-}
-TextUpdates()
 
 // type ShopItem = {
-//     Fruit: number
-//     Price: number
-// }
-
-// type Prices = {
-//     Shop: ShopItem[]
-//     Upgrades: ShopItem[]
-// }
-
+    //     Fruit: number
+    //     Price: number
+    // }
+    
+    // type Prices = {
+        //     Shop: ShopItem[]
+        //     Upgrades: ShopItem[]
+        // }
+        
 export let Prices = {
     Shop: [
         {FruitPerSecond: 0.1, Price: 20},
@@ -41,33 +34,31 @@ export let Prices = {
         {FruitPerSecond: 1.5, Price: 120},
         {MegaFruit: 5, Price: 1500}
     ],
-
+            
     ShopUpgrades: [
         {FruitFromClick: 2, Price: 100},
         {FruitFromClick: 5, Price: 300},
         {FruitFromClick: 10, Price: 900},
         {FruitFromClick: 15, Price: 2000},
     ],
-
+            
     ShopPotions: [
         {FruitMultiplier: 1.5, Price: 15000, Minutes: 5},
         {FruitMultiplier: 5, Price: 45000, Minutes: 20}
     ],
-
+            
     PrestigeShop: [
         {FruitPerSecondMultiplier: 1.25, Price: 1e9}
     ]
-}
-
-
-
-
+        }
+TextUpdates()
+        
 
 export function TextUpdates () {
     localStorage.setItem("FruitAmount", FruitAmount.toString())
     localStorage.setItem("FruitPerSecond", FruitPerSecond.toString())
 
-    OnePerSecond.textContent = `+${false} Fruit Per Second: ${false} Fruit`
+    OnePerSecond.textContent = `+${formatter(Number(Prices.Shop[0].FruitPerSecond?.toFixed(2)))} Fruit Per Second: ${formatter(Number(Prices.Shop[0].Price?.toFixed(2)))} Fruit`
     DisplayFruit()
 }
 

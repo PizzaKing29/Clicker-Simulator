@@ -12,11 +12,6 @@ let PriceIncrease = 1; // starting amount
 let ClickMultiplier = 1; // starting amount
 let FruitIncrease = 1;
 export let FruitPerSecond = Number(localStorage.getItem("FruitPerSecond"));
-export function FruitPerSecondFunction() {
-    return FruitPerSecond;
-    // this function because of an import error, I cant reasign a value
-}
-TextUpdates();
 // type ShopItem = {
 //     Fruit: number
 //     Price: number
@@ -48,10 +43,11 @@ export let Prices = {
         { FruitPerSecondMultiplier: 1.25, Price: 1e9 }
     ]
 };
+TextUpdates();
 export function TextUpdates() {
     localStorage.setItem("FruitAmount", FruitAmount.toString());
     localStorage.setItem("FruitPerSecond", FruitPerSecond.toString());
-    OnePerSecond.textContent = `+${false} Fruit Per Second: ${false} Fruit`;
+    OnePerSecond.textContent = `+${formatter(Number(Prices.Shop[0].FruitPerSecond?.toFixed(2)))} Fruit Per Second: ${formatter(Number(Prices.Shop[0].Price?.toFixed(2)))} Fruit`;
     DisplayFruit();
 }
 // update fruit amount
