@@ -1,4 +1,5 @@
 import { formatter } from './format.js'
+import { Prices } from './types.js'
 
 const Fruit = document.getElementById('Fruit') as HTMLElement
 const FruitAmountElement = document.getElementById('FruitAmountElement') as HTMLElement
@@ -7,6 +8,7 @@ const OnePerSecond = document.getElementById('OnePerSecond') as HTMLElement
 const ThreePerSecond = document.getElementById('ThreePerSecond') as HTMLElement
 const FivePerSecond = document.getElementById('FivePerSecond') as HTMLElement
 const TenPerSecond = document.getElementById('TenPerSecond') as HTMLElement
+const FifteenPerSecond = document.getElementById('FifteenPerSecond') as HTMLElement
 const ResetProgress = document.getElementById('ResetProgress') as HTMLElement
 
 export let FruitAmount: number = Number(localStorage.getItem("FruitAmount"))
@@ -25,32 +27,7 @@ export let FruitPerSecond: number = Number(localStorage.getItem("FruitPerSecond"
         //     Upgrades: ShopItem[]
         // }
         
-export let Prices = {
-    Shop: [
-        {FruitPerSecond: 0.1, Price: 20},
-        {FruitPerSecond: 0.3, Price: 35},
-        {FruitPerSecond: 0.5, Price: 50},
-        {FruitPerSecond: 1, Price: 75},
-        {FruitPerSecond: 1.5, Price: 120},
-        {MegaFruit: 5, Price: 1500}
-    ],
-            
-    ShopUpgrades: [
-        {FruitFromClick: 2, Price: 100},
-        {FruitFromClick: 5, Price: 300},
-        {FruitFromClick: 10, Price: 900},
-        {FruitFromClick: 15, Price: 2000},
-    ],
-            
-    ShopPotions: [
-        {FruitMultiplier: 1.5, Price: 15000, Minutes: 5},
-        {FruitMultiplier: 5, Price: 45000, Minutes: 20}
-    ],
-            
-    PrestigeShop: [
-        {FruitPerSecondMultiplier: 1.25, Price: 1e9}
-    ]
-        }
+
 TextUpdates()
         
 
@@ -59,6 +36,10 @@ export function TextUpdates () {
     localStorage.setItem("FruitPerSecond", FruitPerSecond.toString())
 
     OnePerSecond.textContent = `+${formatter(Number(Prices.Shop[0].FruitPerSecond?.toFixed(2)))} Fruit Per Second: ${formatter(Number(Prices.Shop[0].Price?.toFixed(2)))} Fruit`
+    ThreePerSecond.textContent = `+${formatter(Number(Prices.Shop[1].FruitPerSecond?.toFixed(2)))} Fruit Per Second: ${formatter(Number(Prices.Shop[1].Price?.toFixed(2)))} Fruit`
+    FivePerSecond.textContent = `+${formatter(Number(Prices.Shop[2].FruitPerSecond?.toFixed(2)))} Fruit Per Second: ${formatter(Number(Prices.Shop[2].Price?.toFixed(2)))} Fruit`
+    TenPerSecond.textContent = `+${formatter(Number(Prices.Shop[3].FruitPerSecond?.toFixed(2)))} Fruit Per Second: ${formatter(Number(Prices.Shop[3].Price?.toFixed(2)))} Fruit`
+    FifteenPerSecond.textContent = `+${formatter(Number(Prices.Shop[4].FruitPerSecond?.toFixed(2)))} Fruit Per Second: ${formatter(Number(Prices.Shop[4].Price?.toFixed(2)))} Fruit`
     DisplayFruit()
 }
 

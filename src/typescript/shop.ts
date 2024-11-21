@@ -1,4 +1,5 @@
-import { FruitAmount, SetFruitAmount, Prices, TextUpdates, } from "./script.js"
+import { FruitAmount, SetFruitAmount, TextUpdates } from "./script.js"
+import { Prices } from './types.js'
 
 const ClickSound = new Audio('Audio/click.mp3')
 const Shop = document.querySelectorAll('.Shop')
@@ -8,16 +9,15 @@ const ShopContainer = document.getElementById('ShopContainer')
 
 
 ShopContainer?.addEventListener('click', () => {
-    TextUpdates()
     const ClickedButton = event?.target as HTMLElement
     const Category = ClickedButton.dataset.category
     const Value = Number(ClickedButton.dataset.array)
-
     const ShopItem = Prices.Shop[Value]
     const ShopUpgrades = Prices.ShopUpgrades[Value]
     const ShopPotions = Prices.ShopPotions[Value]
     const PrestigeShop = Prices.PrestigeShop[Value]
-
+    TextUpdates()
+    
 
     if (Category === "Shop" && FruitAmount > ShopItem.Price) {
         SetFruitAmount(FruitAmount - ShopItem.Price, ShopItem.FruitPerSecond ?? 0)
@@ -43,16 +43,13 @@ ShopContainer?.addEventListener('click', () => {
 
 })
 
-export function UpdateButtonStatus() {
+function Buttons () {
     const Buttons = document.querySelectorAll('button')
-
-    // turns buttons to be disabled if you dont have enough fruit
     Buttons.forEach(button => {
-        const ButtonValue = Number(button.value)
-        if (FruitAmount < ButtonValue) {
+        if (FruitAmount < 5) {
             button.disabled = true
         } else {
             button.disabled = false
         }
     })
-}
+} setInterval(Buttons, 1000)
