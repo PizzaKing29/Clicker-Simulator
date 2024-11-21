@@ -1,4 +1,31 @@
-export let Prices = {
+type Prices = {
+    Shop: ShopItem[]
+    ShopUpgrades: ShopUpgrades[]
+    ShopPotions: ShopPotions[]
+    PrestigeShop: PrestigeShop[]
+}
+
+type ShopItem =
+    |{ FruitPerSecond: number, Price: number }
+    |{ MegaFruit: number, Price: number }
+
+type ShopUpgrades = {
+    FruitFromClick: number
+    Price: number
+}
+
+type ShopPotions = {
+    FruitMultiplier: number
+    Price: number
+    Minutes: number
+}
+
+type PrestigeShop = {
+    FruitPerSecondMultiplier: number
+    Price: number
+}
+
+export let Prices: Prices = {
     Shop: [
         {FruitPerSecond: 0.1, Price: 20},
         {FruitPerSecond: 0.3, Price: 35},
